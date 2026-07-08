@@ -33,7 +33,7 @@ This project uses a **Monorepo** structure. You only need to clone this single r
 git clone [https://github.com/MelGGEZXD/invest-analyzer.git](https://github.com/MelGGEZXD/invest-analyzer.git)
 cd invest-analyzer
 ```
-2. Setup Backend (FastAPI)
+### 2. Setup Backend (FastAPI)
 Open a terminal and navigate to the backend directory:
 
 ```Bash
@@ -42,20 +42,20 @@ pip install -r requirements.txt
 uvicorn main:app --reload --port 10000
 The backend API will start running at http://127.0.0.1:10000
 ```
-3. Setup Frontend (Next.js)
+### 3. Setup Frontend (Next.js)
 Open a new separate terminal and navigate to the frontend directory:
 
 ```Bash
 cd invest-analyzer-frontend
 npm install
 ```
-Environment Setup:
+### Environment Setup:
+
 Create a .env.local file inside the invest-analyzer-frontend folder and link it to your local backend:
 ```
-
 NEXT_PUBLIC_API_URL=[http://127.0.0.1:10000](http://127.0.0.1:10000)
 ```
-Run the App:
+### Run the App:
 
 ```Bash
 npm run dev
