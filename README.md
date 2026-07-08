@@ -49,9 +49,9 @@ Open a new separate terminal and navigate to the frontend directory:
 cd invest-analyzer-frontend
 npm install
 ```
-```Environment Setup:
+Environment Setup:
 Create a .env.local file inside the invest-analyzer-frontend folder and link it to your local backend:
-
+```
 
 NEXT_PUBLIC_API_URL=[http://127.0.0.1:10000](http://127.0.0.1:10000)
 ```
