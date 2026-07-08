@@ -15,7 +15,6 @@ app.add_middleware(
 )
 
 def calculate_irr_helper(cash_flows, initial_inv):
-    """ฟังก์ชันช่วยคำนวณ IRR แบบคณิตศาสตร์พื้นฐาน"""
     cfs = [-abs(initial_inv)] + cash_flows
     low, high = -0.99, 2.0
     for _ in range(100):
