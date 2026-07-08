@@ -40,8 +40,9 @@ Open a terminal and navigate to the backend directory:
 cd invest-analyzer-backend
 pip install -r requirements.txt
 uvicorn main:app --reload --port 10000
-The backend API will start running at http://127.0.0.1:10000
 ```
+The backend API will start running at http://127.0.0.1:10000
+
 ### 3. Setup Frontend (Next.js)
 Open a new separate terminal and navigate to the frontend directory:
 
