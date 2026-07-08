@@ -94,21 +94,18 @@ async def run_monte_carlo(
     iterations = 1000
     all_npvs = []
     
-    # จำลองสถานการณ์ 1,000 ครั้ง
+    
     for _ in range(iterations):
         sim_npv = -abs(initial_investment)
         for t, base_cf in enumerate(base_flows, start=1):
-            # สุ่มความผันผวน +/- 10% ของกระแสเงินสดแต่ละปีด้วยการแจกแจงแบบปกติ (Normal Distribution)
             noise = np.random.normal(0, abs(base_cf) * 0.1) 
             sim_cf = base_cf + noise
             sim_npv += sim_cf / ((1 + discount_rate) ** t)
         all_npvs.append(sim_npv)
     
-    # สรุปผลทางสถิติ
     all_npvs = sorted(all_npvs)
     prob_success = len([v for v in all_npvs if v > 0]) / iterations * 100
     
-    # เตรียมข้อมูล Histogram (แบ่งกลุ่ม NPV เป็น 10 ช่วง)
     counts, bins = np.histogram(all_npvs, bins=10)
     histogram_data = [
         {"range": f"{int(bins[i]/1000)}k", "count": int(counts[i])} 
